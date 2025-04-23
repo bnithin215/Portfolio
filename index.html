@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buggarigani Nithin | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="Photo.JPG" type="image/x-icon">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Buggarigani Nithin</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="controls">
+      <button class="menu-toggle">☰</button>
+      <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero section">
+    <h2>Hello, I'm <span>Buggarigani Nithin</span></h2>
+    <p>A passionate Web developer.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="Photo.JPG" alt="Nithin Buggarigani" class="profile-img" />
+      <p>
+        Hi, I'm Nithin Buggarigani — a web development enthusiast who enjoys turning ideas into functional and visually appealing websites. I’m passionate about front-end technologies like HTML, CSS, and JavaScript, and I love building small projects that help me learn and grow. Whether it’s a game, a tool, or a personal website, I enjoy every step of the process from concept to deployment.
+      </p>
+    </div>
+  </section>
+  
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Memory Game</h3>
+        <p>A fun card-matching game built with HTML, CSS, and JavaScript.</p>
+        <a href="https://java-script-mini-project-omega.vercel.app/">Live Demo</a> | <a href="https://github.com/bnithin215/JavaScript-MiniProject">GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Bonafide Generator</h3>
+        <p>A simple, efficient web-based tool to generate bonafide certificates for students using HTML, CSS, and JavaScript. Perfect for automating a repetitive task in schools, colleges, and institutions.</p>
+        <a href="https://bonafide-generator.vercel.app/">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:nithinbuggarigani@gmail.com" target="_blank">nithinbuggarigani@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/bnithin215" target="_blank">bnithin215</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nithin-buggarigani-a4625524b/" target="_blank">Nithin Buggarigani</a></p>
+      </section>
+      
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nithin. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.section', {
+      origin: 'bottom',
+      distance: '50px',
+      duration: 1000,
+      delay: 200,
+      reset: false
+    });
+  </script>
+</body>
+</html>
