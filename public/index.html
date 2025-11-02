@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Doe - Frontend Developer & UI/UX Designer Portfolio">
+    <title>NithinBuggarigani | Fullstack WebDeveloper</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="photo.jpg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Progress Bar -->
+<div class="progress-bar">
+    <div class="progress"></div>
+</div>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <a href="#home" class="logo">Nithin<span>Buggarigani</span></a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="resume.html" class="nav-link nav-link-resume" target="_blank">Resume</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-container">
+            <button class="theme-toggle-mobile" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="resume.html" class="nav-link" target="_blank">Resume</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="subtitle">Hello, I'm</p>
+                    <h1 class="name">Nithin Buggarigani</h1>
+                    <h2 class="title">Fullstack WebDeveloper</h2>
+                    <p class="description">
+                        I craft responsive websites where technology meets creativity.
+                        Building digital experiences that are intuitive, accessible, and performant.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#projects" class="btn btn-secondary">View Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="photo.jpg" alt="Nithin Buggarigani" class="profile-img">
+                        <div class="experience-badge">
+                            <span class="years"></span>
+                            <span class="text">Fresher</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="title-underline"></div>
+
+            <div class="about-content">
+                <p class="about-text-full">
+                    I'm a passionate full-stack web developer with a strong focus on creating intuitive and visually appealing digital experiences. I specialize in building responsive, user-friendly web applications that balance functionality with clean designs.
+                </p>
+                <p class="about-text-full">
+                    My approach combines technical skills in both front-end and back-end development with creative problem-solving, ensuring the final product not only looks great but also performs efficiently. I thrive in collaborative environments and believe in continuous learning, always striving to improve and deliver impactful solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technologies & Tools</h2>
+            <div class="title-underline"></div>
+
+            <div class="skills-container">
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-laptop-code"></i> Frontend
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #f7df1e; color: #000;">
+                                    <i class="fab fa-js"></i> JavaScript
+                                </span>
+                        <span class="skill-tag" style="background: #61dafb; color: #000;">
+                                    <i class="fab fa-react"></i> React
+                                </span>
+                        <span class="skill-tag" style="background: #e34f26; color: #fff;">
+                                    <i class="fab fa-html5"></i> HTML5
+                                </span>
+                        <span class="skill-tag" style="background: #1572b6; color: #fff;">
+                                    <i class="fab fa-css3-alt"></i> CSS3
+                                </span>
+                        <span class="skill-tag" style="background: #06b6d4; color: #fff;">
+                                    <i class="fas fa-wind"></i> TailwindCSS
+                                </span>
+                        <span class="skill-tag" style="background: #7952b3; color: #fff;">
+                                    <i class="fab fa-bootstrap"></i> Bootstrap
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-server"></i> Backend
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #339933; color: #fff;">
+                                    <i class="fab fa-node-js"></i> Node.js
+                                </span>
+                        <span class="skill-tag" style="background: #000; color: #fff;">
+                                    <i class="fas fa-code"></i> Express.js
+                                </span>
+                        <span class="skill-tag" style="background: #4479a1; color: #fff;">
+                                    <i class="fas fa-database"></i> REST APIs
+                                </span>
+                        <span class="skill-tag" style="background: #0078d4; color: #fff;">
+                                    <i class="fab fa-python"></i> Python
+                                </span>
+                        <span class="skill-tag" style="background: #ff6c37; color: #fff;">
+                                    <i class="fas fa-flask"></i> Postman
+                                </span>
+                        <span class="skill-tag" style="background: #85ea2d; color: #000;">
+                                    <i class="fas fa-file-code"></i> Swagger
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-database"></i> Database
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #47a248; color: #fff;">
+                                    <i class="fas fa-leaf"></i> MongoDB
+                                </span>
+                        <span class="skill-tag" style="background: #4479a1; color: #fff;">
+                                    <i class="fas fa-database"></i> MySQL
+                                </span>
+                        <span class="skill-tag" style="background: #ffca28; color: #000;">
+                                    <i class="fas fa-fire"></i> Firebase
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-cloud"></i> DevOps & Cloud
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #2496ed; color: #fff;">
+                                    <i class="fab fa-docker"></i> Docker
+                                </span>
+                        <span class="skill-tag" style="background: #326ce5; color: #fff;">
+                                    <i class="fas fa-dharmachakra"></i> Kubernetes
+                                </span>
+                        <span class="skill-tag" style="background: #ff9900; color: #000;">
+                                    <i class="fab fa-aws"></i> AWS (EC2, S3)
+                                </span>
+                        <span class="skill-tag" style="background: #d24939; color: #fff;">
+                                    <i class="fas fa-hammer"></i> Jenkins
+                                </span>
+                        <span class="skill-tag" style="background: #2088ff; color: #fff;">
+                                    <i class="fab fa-github"></i> GitHub Actions
+                                </span>
+                        <span class="skill-tag" style="background: #7b42bc; color: #fff;">
+                                    <i class="fas fa-layer-group"></i> Terraform
+                                </span>
+                        <span class="skill-tag" style="background: #00d9ff; color: #000;">
+                                    <i class="fas fa-cloud"></i> Netlify
+                                </span>
+                        <span class="skill-tag" style="background: #000; color: #fff;">
+                                    <i class="fas fa-triangle"></i> Vercel
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-vial"></i> Testing & Monitoring
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #c21325; color: #fff;">
+                                    <i class="fas fa-vial"></i> Jest
+                                </span>
+                        <span class="skill-tag" style="background: #17202c; color: #fff;">
+                                    <i class="fas fa-check-circle"></i> Cypress
+                                </span>
+                        <span class="skill-tag" style="background: #e6522c; color: #fff;">
+                                    <i class="fas fa-chart-line"></i> Prometheus
+                                </span>
+                        <span class="skill-tag" style="background: #f46800; color: #fff;">
+                                    <i class="fas fa-chart-area"></i> Grafana
+                                </span>
+                        <span class="skill-tag" style="background: #8d6caf; color: #fff;">
+                                    <i class="fas fa-theater-masks"></i> Playwright
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-tools"></i> Tools & Others
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #181717; color: #fff;">
+                                    <i class="fab fa-github"></i> GitHub
+                                </span>
+                        <span class="skill-tag" style="background: #f34f29; color: #fff;">
+                                    <i class="fab fa-git-alt"></i> Git
+                                </span>
+                        <span class="skill-tag" style="background: #007acc; color: #fff;">
+                                    <i class="fas fa-code"></i> VS Code
+                                </span>
+                        <span class="skill-tag" style="background: #cb3837; color: #fff;">
+                                    <i class="fab fa-npm"></i> NPM
+                                </span>
+                        <span class="skill-tag" style="background: #00c4b3; color: #000;">
+                                    <i class="fas fa-palette"></i> Render
+                                </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 class="category-title">
+                        <i class="fas fa-shield-alt"></i> Authentication
+                    </h4>
+                    <div class="skill-tags">
+                                <span class="skill-tag" style="background: #ffca28; color: #000;">
+                                    <i class="fas fa-lock"></i> Firebase Auth
+                                </span>
+                        <span class="skill-tag" style="background: #3c7ebf; color: #fff;">
+                                    <i class="fas fa-key"></i> OAuth2.0
+                                </span>
+                        <span class="skill-tag" style="background: #5865f2; color: #fff;">
+                                    <i class="fas fa-id-badge"></i> OpenID
+                                </span>
+                        <span class="skill-tag" style="background: #000; color: #fff;">
+                                    <i class="fas fa-shield-alt"></i> JWT
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="projects-header">
+                <div class="projects-title-section">
+                    <h2 class="section-title">My Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-controls">
+                    <label for="sort-select" class="sort-label">
+                        <i class="fas fa-sort"></i> Sort by:
+                    </label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="latest">Latest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="stars">Most Stars</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading state -->
+            <div id="projects-loading" class="projects-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading projects from GitHub...</p>
+            </div>
+
+            <!-- Error state -->
+            <div id="projects-error" class="projects-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Unable to load projects. Please try again later.</p>
+            </div>
+
+            <!-- Projects grid (will be populated by JavaScript) -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="title-underline"></div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        I'm currently available for freelance work and full-time opportunities.
+                        If you have a project that needs some creative direction or you're looking
+                        to hire, please feel free to contact me.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:nithinbuggarigani@gmail.com">nithinbuggarigani@gmail.com</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.linkedin.com/in/nithin-buggarigani-a4625524b/">linkedin.com/in/nithinb</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/bnithin215">github.com/bnithin215</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-twitter"></i>
+                            <a href="https://x.com/Nithin21k">twitter.com/nithinB</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="contact-form">
+                        <h3>Send Me a Message</h3>
+
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#home" class="logo">Nithin<span>Buggarigani</span></a>
+                <p class="copyright">&copy; <span id="current-year"></span> All rights reserved.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/bnithin215" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nithin-buggarigani-a4625524b/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/Nithin21k" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:nithinbuggarigani@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top button -->
+<a href="#home" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+</body>
+</html>

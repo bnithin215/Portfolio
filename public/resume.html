@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nithin Buggarigani - Full Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- jsPDF Library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      background: #f5f7fa;
+      animation: fadeIn 1.5s ease-in-out;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      animation: slideUp 1s ease;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+      animation: fadeIn 2s ease;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-download {
+      background: #2c3e50;
+      color: white;
+    }
+
+    .btn-print {
+      background: #34495e;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: #2c3e50;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 1.2s ease;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      color: white;
+    }
+
+    header .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+      animation: fadeInUp 1.4s ease;
+      color: white;
+    }
+
+    header .contact {
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      animation: fadeInUp 1.6s ease;
+    }
+
+    header .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+
+    header .contact i {
+      font-size: 1.1rem;
+      color: white !important;
+    }
+
+    header a {
+      color: white !important;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    header a:hover {
+      opacity: 0.8;
+    }
+
+    /* Sections */
+    .resume-body {
+      padding: 2.5rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 1s ease;
+      animation-fill-mode: both;
+    }
+
+    section:nth-child(1) { animation-delay: 0.2s; }
+    section:nth-child(2) { animation-delay: 0.4s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.8s; }
+    section:nth-child(5) { animation-delay: 1s; }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #2c3e50;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #2c3e50;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #34495e;
+      transition: width 0.5s ease;
+    }
+
+    section:hover h2::after {
+      width: 100%;
+    }
+
+    /* Professional Summary */
+    .summary-text {
+      line-height: 1.8;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-left: 4px solid #2c3e50;
+      background: #f8f9fa;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
+      background: #ecf0f1;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .project-title:hover {
+      color: #34495e;
+    }
+
+    .project-description {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Education */
+    .education-item {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .education-item:hover {
+      background: #ecf0f1;
+    }
+
+    .education-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+
+    .education-details {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: #2c3e50;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      animation: popIn 0.5s ease;
+      animation-fill-mode: both;
+    }
+
+    .skill-tag:nth-child(1) { animation-delay: 0.1s; }
+    .skill-tag:nth-child(2) { animation-delay: 0.15s; }
+    .skill-tag:nth-child(3) { animation-delay: 0.2s; }
+    .skill-tag:nth-child(4) { animation-delay: 0.25s; }
+    .skill-tag:nth-child(5) { animation-delay: 0.3s; }
+    .skill-tag:nth-child(6) { animation-delay: 0.35s; }
+    .skill-tag:nth-child(7) { animation-delay: 0.4s; }
+    .skill-tag:nth-child(8) { animation-delay: 0.45s; }
+
+    .skill-tag:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 5px 15px rgba(44, 62, 80, 0.4);
+      background: #34495e;
+    }
+
+    /* Certifications */
+    .cert-item {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .cert-item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #2c3e50;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .cert-item a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .cert-item a:hover {
+      color: #34495e;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .action-buttons {
+        display: none !important;
+      }
+
+      header {
+        background: #2c3e50 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color: white !important;
+      }
+
+      header h1,
+      header .subtitle,
+      header .contact,
+      header .contact-item,
+      header a,
+      header i {
+        color: white !important;
+      }
+
+      .project-item,
+      .education-item {
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .skill-tag {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      section {
+        animation: none;
+      }
+
+      h2::after {
+        width: 100%;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .action-buttons {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1rem;
+        flex-direction: row;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header .subtitle {
+        font-size: 1rem;
+      }
+
+      header .contact {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .resume-body {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+  <button class="btn btn-download" onclick="downloadPDF()">
+    <i class="fas fa-download"></i> Download PDF
+  </button>
+  <button class="btn btn-print" onclick="window.print()">
+    <i class="fas fa-print"></i> Print to PDF
+  </button>
+</div>
+
+<!-- Resume Container -->
+<div class="resume-container" id="resume">
+  <header>
+    <h1>Nithin Buggarigani</h1>
+    <p class="subtitle">Full Stack Developer | MERN | Cloud & DevOps Enthusiast</p>
+    <div class="contact">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+91 9618062917</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:nithinbuggarigani@gmail.com">nithinbuggarigani@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/bnithin215" target="_blank">bnithin215</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/nithin215" target="_blank">nithin215</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="resume-body">
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        Full Stack Developer skilled in building scalable web applications using <strong>React.js, Node.js, Express.js, and MongoDB</strong>.
+        Experienced with cloud deployment, CI/CD automation, and application testing. Passionate about developing efficient, secure,
+        and AI-augmented solutions.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project-item">
+        <div class="project-title">
+          <a href="https://github.com/bnithin215/EcommerceApp" target="_blank">
+            <i class="fas fa-external-link-alt"></i> EcommerceApp — Srija4Her
+          </a>
+        </div>
+        <p class="project-description">
+          Developed a modern e-commerce platform for women's clothing using React 18, Tailwind CSS, and Firebase
+          with secure Razorpay payments and admin dashboard.
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">
+          <a href="https://github.com/bnithin215/Movie-Database" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Movie Database App
+          </a>
+        </div>
+        <p class="project-description">
+          Built a full-stack movie management app using Node.js, Express.js, and MongoDB, integrating OMDb API
+          for real-time movie data.
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">
+          <a href="https://github.com/bnithin215/Bonafide-Generator" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Bonafide Certificate Generator
+          </a>
+        </div>
+        <p class="project-description">
+          Automated certificate generation using HTML, CSS, and JavaScript with responsive design and PDF export.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="education-title">TKR College of Engineering and Technology</div>
+        <div class="education-details">B.Tech in Electronics and Communication Engineering (2021–2024)</div>
+      </div>
+      <div class="education-item">
+        <div class="education-title">Government Polytechnic, Nizamabad</div>
+        <div class="education-details">Diploma in Electronics and Communication Engineering (2018–2021)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <span class="skill-tag">JavaScript (ES6+)</span>
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">AWS (EC2, S3)</span>
+        <span class="skill-tag">Firebase</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">Jest</span>
+        <span class="skill-tag">Cypress</span>
+        <span class="skill-tag">Prometheus</span>
+        <span class="skill-tag">Grafana</span>
+        <span class="skill-tag">Swagger</span>
+        <span class="skill-tag">Terraform</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="cert-item">
+        <strong>JavaScript (Intermediate)</strong> –
+        <a href="https://www.hackerrank.com/certificates/3d38ec74953a" target="_blank">HackerRank</a>
+      </div>
+      <div class="cert-item">
+        <strong>Responsive Web Design</strong> –
+        <a href="https://www.freecodecamp.org/certification/NithinBuggarigani/responsive-web-design" target="_blank">freeCodeCamp</a>
+      </div>
+      <div class="cert-item">
+        <strong>Git and GitHub BootCamp</strong> –
+        <a href="https://drive.google.com/file/d/1AqsD_ZOzUS6C2ngaZTgNZHa2Hh0ZdNyM/view" target="_blank">LetsUpgrade</a>
+      </div>
+      <div class="cert-item">
+        <strong>Introduction to Cybersecurity</strong> –
+        <a href="https://www.credly.com/badges/69adc768-3267-496c-a7cf-051403facaa4/linked_in_profile" target="_blank">Cisco Networking Academy</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Nithin Buggarigani</p>
+  </footer>
+</div>
+
+<script>
+  // PDF Download Function using html2canvas and jsPDF
+  async function downloadPDF() {
+    const element = document.getElementById('resume');
+    const buttons = document.querySelector('.action-buttons');
+
+    // Hide buttons
+    buttons.style.display = 'none';
+
+    try {
+      // Create canvas from HTML
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+        windowWidth: 900,
+        onclone: function(clonedDoc) {
+          // Ensure header background and colors are preserved
+          const header = clonedDoc.querySelector('header');
+          if (header) {
+            header.style.background = '#2c3e50';
+            header.style.color = 'white';
+          }
+        }
+      });
+
+      // Calculate PDF dimensions
+      const imgData = canvas.toDataURL('image/jpeg', 1.0);
+      const pdf = new jspdf.jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+        compress: true
+      });
+
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 297; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      // Add image to PDF
+      pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // Add extra pages if needed
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      // Save PDF
+      pdf.save('Nithin_Buggarigani_Resume.pdf');
+
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      alert('PDF download failed. Please use the "Print to PDF" button instead.\n\nSteps:\n1. Click "Print to PDF"\n2. In print dialog, select "Save as PDF"\n3. Click Save');
+    } finally {
+      // Show buttons again
+      buttons.style.display = 'flex';
+    }
+  }
+
+  // Smooth scroll reveal animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>

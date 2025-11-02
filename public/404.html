@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Nithin Buggarigani</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="Photo.JPG">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 3rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .error-icon {
+      font-size: 8rem;
+      color: #667eea;
+      margin-bottom: 1rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #e0e0e0;
+    }
+
+    .btn-secondary:hover {
+      background: #e9ecef;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 2rem;
+    }
+
+    .footer-text a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .container {
+        padding: 4rem 3rem;
+      }
+
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+      }
+    }
+
+    @media (max-width: 639px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .error-icon {
+        font-size: 5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Additional animations */
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="error-icon">
+    <i class="fas fa-exclamation-triangle"></i>
+  </div>
+
+  <h1>404</h1>
+  <h2>Oops! Page Not Found</h2>
+  <p>
+    The page you're looking for doesn't exist or has been moved.
+    Don't worry, let's get you back on track!
+  </p>
+
+  <div class="buttons">
+    <a href="index.html" class="btn btn-primary">
+                <span>
+                    <i class="fas fa-home"></i>
+                    Go to Homepage
+                </span>
+    </a>
+    <a href="resume.html" class="btn btn-secondary">
+                <span>
+                    <i class="fas fa-file-alt"></i>
+                    View Resume
+                </span>
+    </a>
+  </div>
+
+  <div class="footer-text">
+    Need help? <a href="mailto:nithinbuggarigani@gmail.com">Contact me</a>
+  </div>
+</div>
+
+<script>
+  // Add smooth animation on load
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.container');
+    container.style.opacity = '0';
+    setTimeout(() => {
+      container.style.transition = 'opacity 0.8s ease';
+      container.style.opacity = '1';
+    }, 100);
+  });
+
+  // Add ripple effect on button click
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      this.appendChild(ripple);
+
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+</script>
+</body>
+</html>
