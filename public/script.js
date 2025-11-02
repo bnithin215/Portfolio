@@ -172,9 +172,13 @@ function createProjectCard(repo) {
 // Get project image based on repo name (customize this for your specific projects)
 function getProjectImage(repoName) {
     const imageMap = {
-        'bonafide-certificate-generator': 'imgprj.png',
-        'ai-chatbot': 'Aichat.png',
-        'aichat': 'Aichat.png',
+        'bonafide-certificate-generator': 'bonafide.png',
+        'bonafide-generator': 'bonafide.png',
+        'ai-chatbot': 'aichat.png',
+        'aichat': 'aichat.png',
+        'ai-chat-bot-react-vite': 'aichat.png',
+        'movie-database': 'memory.png',
+        'movie-database-app': 'memory.png',
         // Add more mappings as needed
     };
 
@@ -182,12 +186,13 @@ function getProjectImage(repoName) {
 
     // Check if we have a specific image for this repo
     for (const [key, value] of Object.entries(imageMap)) {
-        if (normalizedName.includes(key.toLowerCase().replace(/[-_]/g, ''))) {
+        const normalizedKey = key.toLowerCase().replace(/[-_]/g, '');
+        if (normalizedName.includes(normalizedKey) || normalizedKey.includes(normalizedName)) {
             return value;
         }
     }
 
-    // Default placeholder image
+    // Default placeholder image with repo name
     return `https://via.placeholder.com/400x300/4f46e5/ffffff?text=${encodeURIComponent(repoName)}`;
 }
 
